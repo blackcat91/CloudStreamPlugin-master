@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin
 import com.lagradost.cloudstream3.plugins.Plugin
 
+//Plugin
 @CloudstreamPlugin
 class MyLiveTVPlugin: Plugin() {
     private var activity: AppCompatActivity? = null
