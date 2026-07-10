@@ -17,7 +17,7 @@ buildscript {
         // Shitpack repo which contains our tools and dependencies
         maven("https://jitpack.io")
     }
-
+ //Test
     dependencies {
         classpath("com.android.tools.build:gradle:8.7.3")
         // Cloudstream gradle plugin which makes everything work and builds plugins
