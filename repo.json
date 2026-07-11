@@ -1,0 +1,8 @@
+{
+  "name": "My IPTV Repo",
+  "description": "Just a guy trying to watch TV.",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/blackcat91/CloudStreamPlugin-master/builds/plugins.json"
+  ]
+}

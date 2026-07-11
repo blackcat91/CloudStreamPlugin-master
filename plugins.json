@@ -1,0 +1,23 @@
+[
+    {
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Korduene_Logo.png",
+        "fileHash": "sha256-d14f3da89ba867de8a0b5a4f7089e4ae91bd43f07e57afa35f2d898ad2a9b9a3",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/blackcat91/CloudStreamPlugin-master",
+        "fileSize": 24519,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Cloudburst",
+            "BlackCat91"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 3,
+        "internalName": "MyLiveTVProvider",
+        "description": "My IPTV Player",
+        "url": "https://raw.githubusercontent.com/blackcat91/CloudStreamPlugin-master/builds/MyLiveTVProvider.cs3",
+        "name": "MyLiveTVProvider"
+    }
+]
