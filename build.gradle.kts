@@ -6,7 +6,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 plugins {
 
     // For Android projects:
-    id("org.jetbrains.kotlin.android") version "2.4.0" apply false
+    id("org.jetbrains.kotlin.android") version "2.3.0" apply false
 }
 
 
@@ -16,13 +16,15 @@ buildscript {
         mavenCentral()
         // Shitpack repo which contains our tools and dependencies
         maven("https://jitpack.io")
+        maven ( url = "https://storage.googleapis.com/r8-releases/raw" )
     }
  //Test
     dependencies {
-        classpath("com.android.tools.build:gradle:8.5.2")
+        classpath ("com.android.tools:r8:8.13.9")
+        classpath("com.android.tools.build:gradle:8.13.0")
         // Cloudstream gradle plugin which makes everything work and builds plugins
         classpath("com.github.recloudstream:gradle:-SNAPSHOT")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.0")
 
     }
 }
@@ -46,7 +48,7 @@ subprojects {
 
     cloudstream {
         // when running through github workflow, GITHUB_REPOSITORY should contain current repository name
-        setRepo(System.getenv("GITHUB_REPOSITORY") ?: "user/repo")
+        setRepo(System.getenv("GITHUB_REPOSITORY") ?: "https://github.com/blackcat91/CloudStreamPlugin-master")
     }
 
     android {
@@ -59,13 +61,13 @@ subprojects {
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
         }
 
         tasks.withType<KotlinJvmCompile> {
             compilerOptions {
-                jvmTarget.set(JvmTarget.JVM_17) // Required
+                jvmTarget.set(JvmTarget.JVM_1_8) // Required
                 freeCompilerArgs.addAll(
                     "-Xno-call-assertions",
                     "-Xno-param-assertions",
@@ -101,6 +103,6 @@ subprojects {
     }
 }
 
-task<Delete>("clean") {
+tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
